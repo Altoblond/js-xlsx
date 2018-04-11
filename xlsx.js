@@ -7926,7 +7926,13 @@ function write_ws_xml(idx, opts, wb) {
     workbookViewId: opts.workbookViewId === undefined ? '0' : opts.workbookViewId
   });
   o[o.length] = writextag('sheetViews', sheetView);
-
+	
+  //Added in fork: set row heights
+  o.push(writextag("sheetFormatPr", null, {
+            'defaultRowHeight': "35",
+            'customHeight': "1"
+        }));
+	
   if (ws['!cols'] !== undefined && ws['!cols'].length > 0) o[o.length] = (write_ws_xml_cols(ws, ws['!cols']));
   o[sidx = o.length] = '<sheetData/>';
   if (ws['!ref'] !== undefined) {
