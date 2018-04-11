@@ -7939,7 +7939,17 @@ function write_ws_xml(idx, opts, wb) {
   }
 
   if (ws['!merges'] !== undefined && ws['!merges'].length > 0) o[o.length] = (write_ws_xml_merges(ws['!merges']));
-
+  //Added in fork: print margins of 0 for all cells
+	
+  o.push(writextag("pageMargins", null, {
+        'left': "0",
+        'right': "0",
+        'top': "0",
+        'bottom': "0",
+        'header': "0",
+        'footer': "0"
+    }));
+	
   if (ws['!pageSetup'] !== undefined) o[o.length] = write_ws_xml_pagesetup(ws['!pageSetup']);
   if (ws['!rowBreaks'] !== undefined) o[o.length] = write_ws_xml_row_breaks(ws['!rowBreaks']);
   if (ws['!colBreaks'] !== undefined) o[o.length] = write_ws_xml_col_breaks(ws['!colBreaks']);
