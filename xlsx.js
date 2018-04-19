@@ -7950,7 +7950,7 @@ function write_ws_xml(idx, opts, wb) {
   o.push(writextag("pageMargins", null, {
         'left': "10",
         'right': "10",
-        'top': "0",
+        'top': "15",
         'bottom': "25",
         'header': "0",
         'footer': "0"
