@@ -7948,10 +7948,10 @@ function write_ws_xml(idx, opts, wb) {
   //Added in fork: print margins of 0 for all cells
 	
   o.push(writextag("pageMargins", null, {
-        'left': "4",
-        'right': "4",
-        'top': "6",
-        'bottom': "10",
+        'left': "0.39370078740157483",
+        'right': "0.39370078740157483",
+        'top': "0.59055118110236227",
+        'bottom': "0.98425196850393704",
         'header': "0",
         'footer': "0"
     }));
